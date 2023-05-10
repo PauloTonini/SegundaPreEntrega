@@ -13,7 +13,7 @@ const carta = {
         {nombre: "Helado", precio: 240},
         {nombre: "Chocotorta", precio: 300},
         {nombre: "LemonPie", precio: 250}
-    ]
+    ] 
 }
 class Pedido {
     platos;
