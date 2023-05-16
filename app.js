@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const carta = {
     platos: [
         {nombre: "Hamburguesa", precio: 1200},
@@ -22,14 +21,4 @@ const pedido = new Pedido();
 pedido.agregarPlato("Hamburguesa" , 2)
 pedido.agrgarBebida("Gaseosa", 1)
 pedido.agregarPostre("Chocotorta", 2)
-pedido.calcularTotal() 
-=======
-const productos = [];
-
-productos.push(new Producto("azucar","fronterita",45.50,"az"))
-productos.push(new Producto ("cafe","la virginia",78.90,"cf"))
-pruductos.push(new Producto("agua","villavicencio",24.30, "ag"))
-productos.push(new Producto("insecticida","raid",12.30,"in"))
-
-
->>>>>>> d9d763eabbab35e2fcd825f69b7dd26a12e039f1
+pedido.calcularTotal()
