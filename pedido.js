@@ -34,7 +34,7 @@ class Pedido {
         this.agregarPostre = (nombrePostre, cantidad = 1) => {
             const postreEncontrado = carta.postres.find((postre) => postre.nombre === nombrePostre);
             if (postreEncontrado) {
-                this.postres.push ({ nombre: postreEncontrado, precio: postreEncontrado.precio, cantidad});
+                this.postres.push({ nombre: postreEncontrado.nombre, precio: postreEncontrado.precio, cantidad });
                 console.log(`Se ha agregado ${cantidad} ${nombrePostre} al pedido.`);
             } else {
                 console.log (`Lo sentimos, no se encuentra ${nombrePostre} en la carta.`)

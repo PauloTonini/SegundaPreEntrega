@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const bebidas = document.querySelectorAll(".menu-section #bebida1, .menu-section #bebida2, .menu-section #bebida3");
     const postres = document.querySelectorAll(".menu-section #postre1, .menu-section #postre2, .menu-section #postre3");
 
-    // Función para agregar plato al pedido
+    
     function agregarPlato(event) {
         event.preventDefault();
         const nombrePlato = event.target.textContent;
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         mostrarPedido();
     }
 
-    // Función para agregar bebida al pedido
+    
     function agregarBebida(event) {
         event.preventDefault();
         const nombreBebida = event.target.textContent;
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         mostrarPedido();
     }
 
-    // Función para agregar postre al pedido
+    
     function agregarPostre(event) {
         event.preventDefault();
         const nombrePostre = event.target.textContent;
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         mostrarPedido();
     }
 
-    // Agrega eventos de escucha a los elementos del menú
+    
     platos.forEach((plato) => {
         plato.addEventListener("click", agregarPlato);
     });
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 function mostrarPedido() {
     const pedidoItems = document.getElementById("pedido-items");
-    pedidoItems.innerHTML = ""; // Limpiar elementos previos
+    pedidoItems.innerHTML = ""; 
 
     pedido.platos.forEach((plato) => {
         agregarItemPedido(plato.nombre, plato.precio);
@@ -64,7 +64,22 @@ function agregarItemPedido(nombre, precio) {
       <td>${precio}</td>
     `;
     pedidoItems.appendChild(fila);
-  }
+}
+
+function finalizarPedido() {
+    const totalPedido = pedido.calcularTotal(carta);
+    alert(`Total del pedido: ${totalPedido}`);
+    enviarPedidoALaCocina();
+    volverPaginaPrincipal();
+}
+
+function enviarPedidoALaCocina() {
+    console.log("Pedido enviado a la cocina")
+};
+
+function volverPaginaPrincipal() {
+    window.location.href = "./index.html";
+};
 
 const carta = {
     platos: [
@@ -84,6 +99,10 @@ const carta = {
     ]
 }
 const pedido = new Pedido();
+
+const finalizarPedidoBtn = document.getElementById("finalizar-pedido");
+finalizarPedidoBtn.addEventListener("click", finalizarPedido);
+
 
 // const pedido = new Pedido();
 
