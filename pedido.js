@@ -20,7 +20,7 @@ class Pedido {
         }
 
 
-        this.agrgarBebida = (nombreBebida, cantidad = 1)=> {
+        this.agregarBebida = (nombreBebida, cantidad = 1)=> {
             const bebidaEncontrada = carta.bebidas.find((bebida) => bebida.nombre === nombreBebida);
             if (bebidaEncontrada) {
                 this.bebidas.push({ nombre: bebidaEncontrada.nombre, precio: bebidaEncontrada.precio, cantidad});
